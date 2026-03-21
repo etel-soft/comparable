@@ -1,0 +1,33 @@
+{
+    "name": "etel/comparable",
+    "type": "library",
+    "homepage": "https://github.com/etel-soft/comparable",
+    "description": "Represents contracts and infrastructure for compare objects.",
+    "keywords": ["comparable", "compare", "equatable"],
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Mykola Zyk",
+            "email": "mykola@etel.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.94",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Etel\\Compare\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Etel\\CompareTests\\": "tests"
+        }
+    }
+}

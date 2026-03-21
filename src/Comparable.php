@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Etel\Compare\Domain;
+namespace Etel\Compare;
 
 use Etel\Compare\Exception\Uncomparable;
 

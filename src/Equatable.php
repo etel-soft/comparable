@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Etel\Compare\Domain;
+namespace Etel\Compare;
 
 /**
  * Defines method for determining logical equality of instances.

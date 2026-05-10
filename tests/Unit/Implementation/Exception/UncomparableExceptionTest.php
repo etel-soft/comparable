@@ -11,6 +11,7 @@ use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
+use RuntimeException;
 use stdClass;
 
 /**
@@ -68,5 +69,15 @@ final class UncomparableExceptionTest extends UnitTestCase
         $exception = UncomparableException::create(a: null, b: null);
 
         $this->assertSame('Unable to compare null with null.', $exception->getMessage());
+    }
+
+    #[Test]
+    #[TestDox('Preserves previous exception as the cause')]
+    public function testPreservesPreviousException(): void
+    {
+        $previous = new RuntimeException(message: 'original cause');
+        $exception = UncomparableException::create(a: new stdClass(), b: 'text', previous: $previous);
+
+        $this->assertSame($previous, $exception->getPrevious());
     }
 }

@@ -19,12 +19,16 @@ interface RichComparable extends Comparable
      * FALSE otherwise.
      * Note: may differ from value equality defined by Equatable::isEqualTo().
      *
+     * @param T $other
+     *
      * @throws Uncomparable When instance can not be compared to provided value
      */
     public function isEquivalentTo(mixed $other): bool;
 
     /**
      * Returns TRUE when the current object is greater than the other, FALSE otherwise.
+     *
+     * @param T $other
      *
      * @throws Uncomparable When instance can not be compared to provided value
      */
@@ -33,6 +37,8 @@ interface RichComparable extends Comparable
     /**
      * Returns TRUE when the current object is greater than or equal to the other, FALSE otherwise.
      *
+     * @param T $other
+     *
      * @throws Uncomparable When instance can not be compared to provided value
      */
     public function isGreaterOrEqualTo(mixed $other): bool;
@@ -40,12 +46,16 @@ interface RichComparable extends Comparable
     /**
      * Returns TRUE when the current object is less than the other, FALSE otherwise.
      *
+     * @param T $other
+     *
      * @throws Uncomparable When instance can not be compared to provided value
      */
     public function isLessThan(mixed $other): bool;
 
     /**
      * Returns TRUE when the current object is less than or equal to the other, FALSE otherwise.
+     *
+     * @param T $other
      *
      * @throws Uncomparable When instance can not be compared to provided value
      */

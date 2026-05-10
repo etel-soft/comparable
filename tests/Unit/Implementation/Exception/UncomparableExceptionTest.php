@@ -53,6 +53,15 @@ final class UncomparableExceptionTest extends UnitTestCase
     }
 
     #[Test]
+    #[TestDox('Empty string explain is treated the same as null')]
+    public function testEmptyExplainIsIgnored(): void
+    {
+        $exception = UncomparableException::create(a: new stdClass(), b: 'text', explain: '');
+
+        $this->assertSame('Unable to compare stdClass with string.', $exception->getMessage());
+    }
+
+    #[Test]
     #[TestDox('Works with null values')]
     public function testWorksWithNullValues(): void
     {

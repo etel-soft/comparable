@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Etel\Comparable;
 
+use Etel\Comparable\Exception\Uncomparable;
+
 /**
  * Defines an external comparison strategy for objects of type T.
  *
@@ -21,6 +23,8 @@ interface Comparator
      *
      * @param T $a
      * @param T $b
+     *
+     * @throws Uncomparable When $a and $b cannot be compared (e.g. type mismatch)
      */
     public function compare(mixed $a, mixed $b): Outcome;
 }

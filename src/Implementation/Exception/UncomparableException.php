@@ -25,7 +25,7 @@ final class UncomparableException extends InvalidArgumentException implements Un
             'Unable to compare %s with %s%s.',
             get_debug_type(value: $a),
             get_debug_type(value: $b),
-            $explain === null ? '' : sprintf(': %s', $explain)
+            $explain ? sprintf(': %s', $explain) : ''
         ));
     }
 }

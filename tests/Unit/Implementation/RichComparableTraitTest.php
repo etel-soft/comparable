@@ -8,14 +8,14 @@ use Etel\Comparable\Implementation\RichComparableTrait;
 use Etel\Comparable\Outcome;
 use Etel\Comparable\RichComparable;
 use Etel\ComparableTests\Unit\UnitTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
 
 /**
  * @internal
  */
-#[CoversClass(RichComparableTrait::class)]
+#[CoversTrait(RichComparableTrait::class)]
 final class RichComparableTraitTest extends UnitTestCase
 {
     #[Test]

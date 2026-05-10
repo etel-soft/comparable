@@ -2,19 +2,29 @@
 
 declare(strict_types=1);
 
-namespace Etel\Compare;
+namespace Etel\Comparable;
 
-use Etel\Compare\Exception\Uncomparable;
+use Etel\Comparable\Exception\Uncomparable;
 
 /**
- * Defines method for comparing instance to another.
+ * Defines a natural ordering for objects of the implementing class.
+ *
+ * Implement this interface when objects have a single, canonical ordering —
+ * for example, monetary amounts by value or versions by precedence.
+ * For multiple or external orderings use Comparator instead.
+ *
+ * @template T
  */
 interface Comparable
 {
     /**
-     * Returns outcome of comparing the current object to another.
+     * Compares the current object to $other and returns their relative order.
+     * Returns Outcome::Equal when equal, Outcome::Greater when the current object is greater,
+     * and Outcome::Less when the current object is less than $other.
      *
-     * @throws Uncomparable When instance can not be compared to provided value
+     * @param T $other
+     *
+     * @throws Uncomparable When the current object cannot be compared to $other (e.g. type mismatch)
      */
     public function compareTo(mixed $other): Outcome;
 }

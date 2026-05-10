@@ -16,18 +16,19 @@
         "php": "^8.4"
     },
     "require-dev": {
+        "etel/phpunit-double": "^0.1.1",
         "friendsofphp/php-cs-fixer": "^3.94",
         "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^13.0"
     },
     "autoload": {
         "psr-4": {
-            "Etel\\Compare\\": "src"
+            "Etel\\Comparable\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Etel\\CompareTests\\": "tests"
+            "Etel\\ComparableTests\\": "tests"
         }
     }
 }

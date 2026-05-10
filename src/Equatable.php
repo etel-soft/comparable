@@ -2,18 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Etel\Compare;
+namespace Etel\Comparable;
 
 /**
- * Defines method for determining logical equality of instances.
+ * Defines method for determining semantic equality of instances.
+ *
+ * @template T
  */
 interface Equatable
 {
     /**
-     * Determines if two objects are logically identical (value equality). This means that, for example,
-     * `new Decimal('1.0')->isEqualTo(new Decimal('1.00'))` should return false (since they have different scales).
-     *
+     * Determines if two objects are semantically identical (value equality).
      * Returns TRUE when the current object is equal to the other, FALSE otherwise.
+     *
+     * @param T $other
      */
     public function isEqualTo(mixed $other): bool;
 }

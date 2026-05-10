@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Etel\Compare\Exception;
+namespace Etel\Comparable\Exception;
 
 use Throwable;
 
